@@ -86,8 +86,8 @@ export function FinalCta() {
             }}
             className="mx-auto mt-10 max-w-2xl text-pretty text-base leading-[1.65] text-muted-foreground sm:text-lg"
           >
-            One conversation is usually enough to know whether we're a fit. Write to us
-            below — and we'll respond within twenty-four hours with a thoughtful first
+            One conversation is usually enough to know whether we&apos;re a fit. Write to us
+            below — and we&apos;ll respond within twenty-four hours with a thoughtful first
             sketch.
           </motion.p>
 

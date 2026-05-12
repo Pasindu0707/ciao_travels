@@ -203,7 +203,7 @@ export default async function JourneyDetailPage({ params }: Props) {
       <section className="border-t border-border bg-card/30 py-20 sm:py-28">
         <div className="container-luxe grid gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
-            <p className="eyebrow">What's included</p>
+            <p className="eyebrow">What&apos;s included</p>
             <ul className="mt-8 space-y-4">
               {journey.inclusions.map((it) => (
                 <li key={it} className="flex items-start gap-3 text-base">

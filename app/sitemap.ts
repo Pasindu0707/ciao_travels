@@ -4,6 +4,8 @@ import { journeys } from "@/content/journeys";
 import { destinations } from "@/content/destinations";
 import { journal } from "@/content/journal";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
   const now = new Date();

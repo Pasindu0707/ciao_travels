@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, MapPin, Calendar, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { destinations } from "@/content/destinations";
 import { journeys } from "@/content/journeys";
 import { buildMetadata, jsonLdBreadcrumb } from "@/lib/seo";

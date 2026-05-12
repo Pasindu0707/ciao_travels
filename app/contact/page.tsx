@@ -84,7 +84,7 @@ export default function ContactPage() {
             <h2 className="mt-6 text-display-md">A first conversation.</h2>
             <p className="mt-3 text-pretty text-base leading-relaxed text-muted-foreground">
               No forms, no scripts, no sales call. The more you share now, the better the
-              first sketch we'll send back.
+              first sketch we&apos;ll send back.
             </p>
 
             <div className="mt-12">

@@ -135,7 +135,7 @@ export function SignatureJourneys() {
               None quite right?
             </p>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Every journey we craft is bespoke. Tell us how you travel and we'll design
+              Every journey we craft is bespoke. Tell us how you travel and we&apos;ll design
               one entirely your own — within forty-eight hours.
             </p>
             <MagneticButton>

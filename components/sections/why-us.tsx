@@ -55,7 +55,7 @@ export function WhyUs() {
             />
             <p className="mt-10 max-w-md text-pretty text-base leading-[1.7] text-muted-foreground sm:text-lg">
               We accept a limited number of journeys each year. It is the only way we
-              know how to deliver the kind of trip you'll remember in detail, twenty
+              know how to deliver the kind of trip you&apos;ll remember in detail, twenty
               years from now.
             </p>
 

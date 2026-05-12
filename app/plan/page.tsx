@@ -85,7 +85,7 @@ export default function PlanPage() {
                 </h2>
                 <p className="mt-7 max-w-md text-pretty text-[0.95rem] leading-[1.7] text-muted-foreground">
                   Every answer below is read by a planner in Colombo before
-                  we draft a single line. Skip what doesn't matter to you. Be
+                  we draft a single line. Skip what doesn&apos;t matter to you. Be
                   generous where it does.
                 </p>
 

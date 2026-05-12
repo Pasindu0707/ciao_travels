@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { Button } from "@/components/ui/button";
 import { Testimonials } from "@/components/sections/testimonials";
 import { FinalCta } from "@/components/sections/final-cta";
 import { buildMetadata } from "@/lib/seo";
@@ -73,12 +71,12 @@ export default function AboutPage() {
               </p>
               <p>
                 We accept a limited number of journeys each year. Our team is small enough that
-                you'll meet most of them. Every itinerary is drafted from scratch, every hotel
+                you&apos;ll meet most of them. Every itinerary is drafted from scratch, every hotel
                 personally inspected, every guide chosen by hand.
               </p>
               <p>
                 Sri Lanka is a small country. We think it deserves to be travelled slowly. We
-                hope, after a trip with us, you'll agree.
+                hope, after a trip with us, you&apos;ll agree.
               </p>
             </div>
           </div>

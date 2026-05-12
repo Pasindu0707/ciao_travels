@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useForm, Controller, type Control } from "react-hook-form";
+import { useForm, Controller, type Control, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
@@ -609,7 +609,7 @@ function DatesStep({
 }: {
   register: ReturnType<typeof useForm<FormValues>>["register"];
   control: Control<FormValues>;
-  errors: any;
+  errors: FieldErrors<FormValues>;
 }) {
   return (
     <div className="grid gap-10">
@@ -666,7 +666,7 @@ function TravellersStep({
   control: Control<FormValues>;
   setValue: ReturnType<typeof useForm<FormValues>>["setValue"];
   watched: FormValues;
-  errors: any;
+  errors: FieldErrors<FormValues>;
 }) {
   return (
     <div className="grid gap-10">
@@ -742,7 +742,7 @@ function StyleStep({
   errors,
 }: {
   control: Control<FormValues>;
-  errors: any;
+  errors: FieldErrors<FormValues>;
 }) {
   return (
     <Controller
@@ -779,7 +779,7 @@ function InterestsStep({
   watched,
 }: {
   control: Control<FormValues>;
-  errors: any;
+  errors: FieldErrors<FormValues>;
   watched: FormValues;
 }) {
   return (
@@ -868,7 +868,7 @@ function ComfortStep({
   errors,
 }: {
   control: Control<FormValues>;
-  errors: any;
+  errors: FieldErrors<FormValues>;
 }) {
   return (
     <Controller
@@ -905,7 +905,7 @@ function BriefStep({
   watched,
 }: {
   register: ReturnType<typeof useForm<FormValues>>["register"];
-  errors: any;
+  errors: FieldErrors<FormValues>;
   watched: FormValues;
 }) {
   const value = watched.brief || "";
@@ -952,7 +952,7 @@ function ContactStep({
 }: {
   register: ReturnType<typeof useForm<FormValues>>["register"];
   control: Control<FormValues>;
-  errors: any;
+  errors: FieldErrors<FormValues>;
 }) {
   return (
     <div className="grid gap-10">
@@ -1020,7 +1020,7 @@ function ContactStep({
                 aria-describedby={errors.consent ? "consent-error" : undefined}
               />
               <span className="text-sm leading-[1.65] text-muted-foreground">
-                I'd like Ciao Ceylon Tours to send a first itinerary sketch and
+                I&apos;d like Ciao Ceylon Tours to send a first itinerary sketch and
                 reply to my enquiry. My details stay with the planning team.
               </span>
             </label>
@@ -1346,7 +1346,7 @@ function SuccessState({
         </em>
       </h2>
       <p className="mt-7 max-w-2xl text-pretty text-base leading-[1.7] text-muted-foreground sm:text-lg">
-        We've received your brief. Within twenty-four hours, a real planner from
+        We&apos;ve received your brief. Within twenty-four hours, a real planner from
         our Colombo team will reply by email — and within forty-eight, a first
         sketch of your journey will arrive.
       </p>
