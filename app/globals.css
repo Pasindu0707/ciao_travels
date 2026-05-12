@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === LIGHT — warm ivory, deep charcoal, tea-gold, ocean-teal === */
+    --ivory: 36 36% 94%;
+    --cream: 36 42% 93%;
+    --charcoal: 220 16% 12%;
+    --gold: 36 52% 50%;
+    --gold-soft: 40 60% 80%;
+    --gold-deep: 30 58% 36%;
+    --teal: 188 42% 30%;
+    --teal-deep: 192 55% 18%;
+    --teal-midnight: 198 60% 10%;
+
+    /* Page surface: warmer & a touch deeper than pure ivory */
+    --background: 36 32% 94%;
+    --foreground: 220 18% 11%;
+
+    /* Cards sit one step *back* from page — slightly cooler & dimmer */
+    --card: 36 24% 91%;
+    --card-foreground: 220 18% 11%;
+
+    --popover: 36 30% 96%;
+    --popover-foreground: 220 18% 11%;
+
+    --primary: 36 52% 50%;
+    --primary-foreground: 220 18% 11%;
+
+    --secondary: 188 42% 30%;
+    --secondary-foreground: 36 36% 94%;
+
+    --muted: 36 20% 88%;
+    --muted-foreground: 220 9% 34%;
+
+    --accent: 188 42% 30%;
+    --accent-foreground: 36 36% 94%;
+
+    --destructive: 0 60% 44%;
+    --destructive-foreground: 36 36% 94%;
+
+    --border: 35 14% 78%;
+    --input: 35 14% 78%;
+    --ring: 36 52% 50%;
+
+    --radius: 0.5rem;
+
+    /* Luxury motion tokens */
+    --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-cinema: cubic-bezier(0.83, 0, 0.17, 1);
+    --ease-soft: cubic-bezier(0.65, 0, 0.35, 1);
+    --dur-slow: 1.2s;
+    --dur-slower: 1.8s;
+    --dur-slowest: 2.4s;
+
+    /* Editorial radii */
+    --radius-card: 1rem;
+    --radius-card-lg: 1.25rem;
+  }
+
+  .dark {
+    /* === DARK — cinematic midnight teal, warm cream, soft gold === */
+    --background: 200 48% 5%;
+    --foreground: 36 36% 93%;
+
+    /* Cards sit one step *forward* from page — slightly brighter & cooler */
+    --card: 200 38% 9%;
+    --card-foreground: 36 36% 93%;
+
+    --popover: 200 44% 7%;
+    --popover-foreground: 36 36% 93%;
+
+    --primary: 40 62% 68%;
+    --primary-foreground: 200 60% 8%;
+
+    --secondary: 188 32% 20%;
+    --secondary-foreground: 36 36% 93%;
+
+    --muted: 200 30% 12%;
+    --muted-foreground: 36 18% 72%;
+
+    --accent: 188 38% 26%;
+    --accent-foreground: 36 36% 93%;
+
+    --destructive: 0 56% 50%;
+    --destructive-foreground: 36 36% 93%;
+
+    --border: 200 22% 18%;
+    --input: 200 22% 18%;
+    --ring: 40 62% 68%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01", "cv11", "kern";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: hsl(var(--gold) / 0.32);
+    color: hsl(var(--foreground));
+  }
+
+  /* Refined headings */
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+    font-feature-settings: "lnum", "kern", "liga", "ss01";
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--foreground) / 0.15);
+    border-radius: 999px;
+    border: 2px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--gold) / 0.5); }
+}
+
+@layer components {
+  /* Editorial containers */
+  .container-luxe {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-14 2xl:px-20;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-[1120px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .container-reading {
+    @apply mx-auto w-full max-w-[720px] px-5 sm:px-8;
+  }
+
+  /* Glass surfaces */
+  .glass {
+    background: hsl(var(--card) / 0.5);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+
+  .glass-strong {
+    background: hsl(var(--card) / 0.82);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.8);
+  }
+
+  .glass-cream {
+    background: hsl(var(--foreground) / 0.06);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(var(--foreground) / 0.18);
+  }
+
+  /* Hairline divider */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(to right, transparent, hsl(var(--border)) 18%, hsl(var(--border)) 82%, transparent);
+  }
+
+  .hairline-gold {
+    height: 1px;
+    background: linear-gradient(to right, transparent, hsl(var(--gold) / 0.4) 30%, hsl(var(--gold) / 0.4) 70%, transparent);
+  }
+
+  /* Editorial eyebrow */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.32em] text-muted-foreground font-medium;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-px w-10 bg-gold/70;
+  }
+
+  .eyebrow-on-dark {
+    @apply inline-flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.32em] text-cream/75 font-medium;
+  }
+
+  .eyebrow-on-dark::before {
+    content: "";
+    @apply inline-block h-px w-10 bg-gold/80;
+  }
+
+  /* Numbered tag */
+  .number-tag {
+    @apply font-display text-xs tracking-[0.22em] text-gold/85;
+  }
+
+  /* Underline link */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-gold transition-transform duration-700;
+    transition-timing-function: var(--ease-luxury);
+  }
+  .link-underline:hover::after {
+    @apply origin-left scale-x-100;
+  }
+
+  /* Cinematic gradient overlay for hero — deeper, more controlled */
+  .cinema-overlay {
+    background:
+      linear-gradient(180deg,
+        hsl(0 0% 0% / 0.42) 0%,
+        hsl(0 0% 0% / 0.18) 28%,
+        hsl(0 0% 0% / 0.18) 60%,
+        hsl(var(--background) / 0.45) 88%,
+        hsl(var(--background) / 0.95) 100%
+      );
+  }
+
+  .cinema-overlay-side {
+    background:
+      linear-gradient(90deg,
+        hsl(0 0% 0% / 0.55) 0%,
+        hsl(0 0% 0% / 0.2) 35%,
+        hsl(0 0% 0% / 0) 65%,
+        hsl(0 0% 0% / 0.15) 100%
+      );
+  }
+
+  .vignette {
+    box-shadow: inset 0 0 240px 60px hsl(0 0% 0% / 0.35);
+  }
+
+  /* Subtle film grain */
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise);
+    mix-blend-mode: overlay;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  /* Cinematic letterspacing for kinetic headlines */
+  .text-kinetic {
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+    font-feature-settings: "ss01", "lnum", "kern";
+  }
+
+  /* Shared editorial card surface */
+  .card-luxe {
+    @apply relative overflow-hidden bg-card ring-1 ring-inset ring-foreground/[0.04] transition-[box-shadow,border-color] duration-700 ease-luxury;
+    border-radius: var(--radius-card);
+  }
+
+  .card-luxe-lg {
+    @apply relative overflow-hidden bg-card ring-1 ring-inset ring-foreground/[0.04] transition-[box-shadow,border-color] duration-700 ease-luxury;
+    border-radius: var(--radius-card-lg);
+  }
+
+  .card-luxe-hover {
+    @apply hover:ring-gold/30;
+  }
+
+  /* Refined gold focus ring, themed for both modes */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Mask reveal utilities (for clip-path animations) */
+  .mask-clip-hidden {
+    clip-path: inset(0 0 100% 0);
+  }
+  .mask-clip-visible {
+    clip-path: inset(0 0 0% 0);
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+  .mask-fade-t {
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
+  }
+  .mask-fade-r {
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  .bg-grid-faint {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.25) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.25) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  /* Will-change helpers */
+  .gpu { transform: translateZ(0); will-change: transform; }
+
+  /* Quiet, breath-like pulse — for WhatsApp + loading. Slow, not needy. */
+  @keyframes quiet-pulse {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50%      { opacity: 0.85; transform: scale(1.04); }
+  }
+  .animate-quiet-pulse {
+    animation: quiet-pulse 4.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  /* Honour iOS safe areas for floating UI */
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0); }
+  .safe-right  { padding-right:  env(safe-area-inset-right,  0); }
+}
+
+/* Reduced motion: opt-out of all heavy animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
