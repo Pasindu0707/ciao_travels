@@ -1,10 +1,13 @@
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://ciaoceylon.com";
+
 export const siteConfig = {
   name: "Ciao Ceylon Tours",
   shortName: "Ciao Ceylon",
   tagline: "Curated luxury journeys across Sri Lanka",
   description:
     "Ciao Ceylon Tours crafts private, cinematic itineraries through Sri Lanka's tea hills, ancient cities, wild coasts and quiet jungles — for travellers who prefer the road less photographed.",
-  url: "https://ciaoceylon.com",
+  url: siteUrl,
   ogImage: "/og.jpg",
   locale: "en-US",
   contact: {
